@@ -1,0 +1,54 @@
+{
+  "Index": {
+    "title": "全世界好!",
+    "landing_page": "登陆页",
+    "message": "使用各种包进行NextJS开发，包括：",
+    "nextui": "美丽的CSS库利用的nextUI",
+    "next-intl": "国际语言翻译标准化的next-intl",
+    "react-color-palette": "自定义颜色选择器的react-color-palette",
+    "pocketbase": "简化数据库集成的Pocketbase"
+  },
+  "Notes": {
+    "title": "笔记",
+    "card-header": "创建一个新的笔记",
+    "card-btn": "创建笔记",
+    "ph-title": "标题",
+    "ph-content": "内容"
+  },
+  "LocaleSwitcher": {
+    "label": "换言语",
+    "locale": "{locale, select, bm {马来语} en {英语} zh-hans {简体中文}}",
+    "bm": "马来语",
+    "en": "英语",
+    "zh-hans": "简体中文"
+  },
+  "Navigation": {
+    "home": "首页",
+    "notes": "笔记",
+    "height_comparison": "身高比较"
+  },
+  "Height": {
+    "title": "身高比较",
+    "card-header": "输入您的详细信息",
+    "genderGroup": {
+      "label": "性别",
+      "male": "男性",
+      "female": "女性"
+    },
+    "name": "姓名",
+    "ph-name": "(可选)",
+    "height": "身高",
+    "unitGroup": {
+      "label": "单位",
+      "ft": "英尺",
+      "cm": "厘米"
+    },
+    "color-picker_title": "选择颜色",
+    "card-btn": "在控制台记录表单"
+  },
+  "Loading": {
+    "note-page-loading": "正在加载所有笔记",
+    "note-edit-loading": "正在加载用户界面",
+    "height-page-loading": "加载中"
+  }
+}

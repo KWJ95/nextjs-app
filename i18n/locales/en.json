@@ -1,0 +1,54 @@
+{
+  "Index": {
+    "title": "Hello world!",
+    "landing_page": "Landing page",
+    "message": "Using various packages for NextJS development including:",
+    "nextui": "nextUI for beautiful CSS library",
+    "next-intl": "next-intl for standardizing international language translation",
+    "react-color-palette": "react-color-palette to customize color picker",
+    "pocketbase": "pocketbase for simplified database integration"
+  },
+  "Notes": {
+    "title": "Note",
+    "card-header": "Create a new Note",
+    "card-btn": "Create note",
+    "ph-title": "Title",
+    "ph-content": "Content"
+  },
+  "LocaleSwitcher": {
+    "label": "Change language",
+    "locale": "{locale, select, bm {Bahasa Melayu} en {English} zh-hans {Simplified Chinese}}",
+    "bm": "Bahasa Melayu",
+    "en": "English",
+    "zh-hans": "Simplified Chinese"
+  },
+  "Navigation": {
+    "home": "Home",
+    "notes": "Notes",
+    "height_comparison": "Height Comparison"
+  },
+  "Height": {
+    "title": "Height Comparison",
+    "card-header": "Enter your details",
+    "genderGroup": {
+      "label": "Gender",
+      "male": "Male",
+      "female": "Female"
+    },
+    "name": "Name",
+    "ph-name": "(Optional)",
+    "height": "Height",
+    "unitGroup": {
+      "label": "Unit",
+      "ft": "Ft",
+      "cm": "Cm"
+    },
+    "color-picker_title": "Pick a color",
+    "card-btn": "Console log form"
+  },
+  "Loading": {
+    "note-page-loading": "Loading all notes",
+    "note-edit-loading": "Loading UI",
+    "height-page-loading": "Loading"
+  }
+}

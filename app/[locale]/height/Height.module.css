@@ -1,0 +1,44 @@
+.sideHeading {
+  color: rgb(232, 230, 227);
+  background-image: initial;
+  background-color: rgb(169, 46, 35);
+}
+
+.group {
+  display: flex;
+  margin: 4% 0;
+  border: 1px solid #c9c9c9;
+  justify-content: center;
+}
+
+.nameSection {
+  display: flex;
+  align-items: center;
+}
+
+.card_nextUI {
+  overflow: hidden;
+}
+
+.example-container {
+  width: 100vw;
+  height: 100vh;
+}
+
+.box {
+  background: white;
+  border-radius: 30px;
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  top: calc(50% - 150px / 2);
+  left: calc(50% - 150px / 2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.progressIcon {
+  width: 80%;
+  height: 80%;
+}

@@ -9,14 +9,19 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@nextui-org/react": "^1.0.0-beta.12",
     "@types/node": "20.1.2",
     "@types/react": "18.2.6",
     "@types/react-dom": "18.2.4",
+    "accept-language": "^3.0.18",
     "eslint": "8.40.0",
     "eslint-config-next": "13.4.1",
+    "framer-motion": "^10.12.14",
     "next": "13.4.1",
+    "next-intl": "^2.14.6",
+    "pocketbase": "^0.15.0",
     "react": "18.2.0",
-    "react-dom": "18.2.0",
+    "react-color-palette": "^6.2.0",
     "typescript": "5.0.4"
   }
 }

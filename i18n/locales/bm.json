@@ -1,0 +1,54 @@
+{
+  "Index": {
+    "title": "Apa khabar dunia!",
+    "landing_page": "Halaman pendaratan",
+    "message": "Menggunakan pelbagai pakej untuk pembangunan NextJS termasuk:",
+    "nextui": "nextUI untuk perpustakaan CSS yang indah",
+    "next-intl": "next-intl untuk menyeragamkan terjemahan bahasa antarabangsa",
+    "react-color-palette": "react-color-palette untuk menyesuaikan pemilih warna",
+    "pocketbase": "pocketbase untuk penyepaduan pangkalan data yang dipermudahkan"
+  },
+  "Notes": {
+    "title": "Nota",
+    "card-header": "Buat nota baru",
+    "card-btn": "Buat nota",
+    "ph-title": "Tajuk",
+    "ph-content": "Kandungan"
+  },
+  "LocaleSwitcher": {
+    "label": "Tukar bahasa",
+    "locale": "{locale, select, bm {Bahasa Melayu} en {Bahasa English} zh-hans {Bahasa Cina}}",
+    "bm": "Bahasa Melayu",
+    "en": "Bahasa English",
+    "zh-hans": "Bahasa Cina"
+  },
+  "Navigation": {
+    "home": "Muka depan",
+    "notes": "Nota",
+    "height_comparison": "Perbandingan Ketinggian"
+  },
+  "Height": {
+    "title": "Perbandingan Tinggi",
+    "card-header": "Masukkan butiran anda",
+    "genderGroup": {
+      "label": "Jantina",
+      "male": "Lelaki",
+      "female": "Perempuan"
+    },
+    "name": "Nama",
+    "ph-name": "(Pilihan)",
+    "height": "Tinggi",
+    "unitGroup": {
+      "label": "Unit",
+      "ft": "Kaki",
+      "cm": "Cm"
+    },
+    "color-picker_title": "Pilih warna",
+    "card-btn": "Konsol log borang"
+  },
+  "Loading": {
+    "note-page-loading": "Memuatkan semua nota",
+    "note-edit-loading": "Memuatkan UI",
+    "height-page-loading": "Memuatkan"
+  }
+}
