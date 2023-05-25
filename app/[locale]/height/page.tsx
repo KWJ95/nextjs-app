@@ -1,5 +1,5 @@
 "use client";
-import { Suspense, useTransition } from "react";
+import { Suspense } from "react";
 import { Container, Text, Grid, Row, Card } from "@nextui-org/react";
 import CreatePerson from "./CreatePerson";
 import LoadingHeight from "./loading";
@@ -44,7 +44,6 @@ export default async function HeightPage() {
 
 function People( {p} : any) {
   const {id, name, gender, height, color } = p || {};
-  console.log(name, color);
   const hex = color?.hex ?? "invalid";
   return (
     <Card>
