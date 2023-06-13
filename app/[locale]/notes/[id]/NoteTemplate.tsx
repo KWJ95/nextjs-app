@@ -1,8 +1,10 @@
 "use client";
 import { Text, Card, Spacer, Container } from "@nextui-org/react";
+import { useTranslations } from "next-intl";
 
 export default function NoteTemplate({ note }: any) {
   const { id, title, content, created, updated } = note || {};
+  const t = useTranslations('Notes');
   return (
     <Container>
       <Text h1>notes/{id}</Text>
@@ -19,7 +21,7 @@ export default function NoteTemplate({ note }: any) {
         </Card.Header>
         <Card.Body>
           <Text h5>{content}</Text>
-          <Text>Latest changed: {updated > created ? updated : created}</Text>
+          <Text>{t('latest_changed')} {updated > created ? updated : created}</Text>
         </Card.Body>
       </Card>
       <Spacer y={1} />

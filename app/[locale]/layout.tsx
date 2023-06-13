@@ -1,22 +1,35 @@
 "use client";
 import "./globals.css";
 import { NextIntlClientProvider } from "next-intl";
+import { NextUIProvider } from "@nextui-org/react";
 import { notFound } from "next/navigation";
+import { SSRProvider } from "@react-aria/ssr";
 import LocaleSwitcher from "../components/LocaleSwitcher";
 import Navigation from "../components/Navigation";
+import { ReactNode } from "react";
 
-export function generateStaticParams() {
-  return [{ locale: "en" }, { locale: "bm" }, { locale: "zh-hans" }];
-}
-export default async function LocaleLayout({ children, params: { locale } }) {
-  let messages;
+type Props = {
+  children: ReactNode;
+  params: { locale: string };
+};
 
+// export function generateStaticParams() {
+//   return [{ locale: "en" }, { locale: "bm" }, { locale: "zh-hans" }];
+// }
+
+async function getMessages(locale: string) {
   try {
-    // messages = (await import(`../../messages/${locale}.json`)).default;
-    messages = (await import(`../../i18n/locales/${locale}.json`)).default;
+    return (await import(`../../i18n/locales/${locale}.json`)).default;
   } catch (error) {
     notFound();
   }
+}
+
+export default async function LocaleLayout({
+  children,
+  params: { locale }
+}: Props) {
+  const messages = await getMessages(locale);
 
   return (
     <html lang={locale}>
@@ -34,15 +47,19 @@ export default async function LocaleLayout({ children, params: { locale } }) {
       </head>
       <body>
         <main>
-          <NextIntlClientProvider locale={locale} messages={messages}>
-            <nav className="navbar navbar-expand-lg navbar-light bg-light w-100">
-              <div className="container-fluid">
-                <Navigation />
-                <LocaleSwitcher />
-              </div>
-            </nav>
-            {children}
-          </NextIntlClientProvider>
+          <SSRProvider>
+            {/* <NextUIProvider> */}
+            <NextIntlClientProvider locale={locale} messages={messages}>
+              <nav className="navbar navbar-expand-lg navbar-light bg-light w-100">
+                <div className="container-fluid">
+                  <Navigation />
+                  <LocaleSwitcher />
+                </div>
+              </nav>
+              {children}
+            </NextIntlClientProvider>
+            {/* </NextUIProvider> */}
+          </SSRProvider>
         </main>
       </body>
     </html>

@@ -10,11 +10,14 @@
   },
   "Notes": {
     "title": "笔记",
-    "card-header": "创建一个新的笔记",
-    "card-btn": "创建笔记",
+    "card-header-create": "创建新笔记",
+    "card-header-edit": "编辑笔记",
+    "card-create-btn": "创建笔记",
+    "card-edit-btn": "编辑笔记",
     "ph-title": "标题",
-    "ph-content": "内容"
-  },
+    "ph-content": "内容",
+    "latest_changed": "最近修改："
+    },
   "LocaleSwitcher": {
     "label": "换言语",
     "locale": "{locale, select, bm {马来语} en {英语} zh-hans {简体中文}}",

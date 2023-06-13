@@ -11,12 +11,13 @@ import {
   Spacer,
   Container,
 } from "@nextui-org/react";
+import { useTranslations } from "next-intl";
 
 export default function UpdateNote({ note }: any) {
   const id = note.id;
   const [title, setTitle] = useState(note.title);
   const [content, setContent] = useState(note.content);
-
+  const t = useTranslations('Notes');
   const router = useRouter();
 
   const update = async () => {
@@ -40,14 +41,14 @@ export default function UpdateNote({ note }: any) {
     <Container>
       <Card css={{ mw: "350px", justifyContent: "center" }}>
         <Card.Header>
-          <Text h3>Edit note ({id})</Text>
+          <Text h3>{t('card-header-edit')} ({id})</Text>
         </Card.Header>
         <Card.Body>
           <form onSubmit={update}>
             <Row>
               <Input
                 type="text"
-                placeholder="Title"
+                placeholder={t('ph-title')}
                 value={title}
                 width="inherit"
                 onChange={(e) => setTitle(e.target.value)}
@@ -56,7 +57,7 @@ export default function UpdateNote({ note }: any) {
             <Spacer />
             <Row>
               <Textarea
-                placeholder="Content"
+                placeholder={t('ph-content')}
                 value={content}
                 width="inherit"
                 onChange={(e) => setContent(e.target.value)}
@@ -64,7 +65,7 @@ export default function UpdateNote({ note }: any) {
             </Row>
             <Spacer />
             <Row css={{ justifyContent: "center" }}>
-              <Button type="submit">Edit note</Button>
+              <Button type="submit">{t('card-edit-btn')}</Button>
             </Row>
           </form>
         </Card.Body>

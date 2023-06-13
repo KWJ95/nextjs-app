@@ -1,5 +1,5 @@
 "use client";
-import { Suspense } from "react";
+import { Suspense, useState, useEffect } from "react";
 import { Text, Card, Grid, Spacer, Container } from "@nextui-org/react";
 import { useTranslations } from "next-intl";
 import CreateNote from "./CreateNote";
@@ -8,24 +8,34 @@ import LoadingCustom from "./loading";
 import styles from "./Notes.module.css";
 
 async function getNotes() {
-  const res = await fetch(
-    "http://127.0.0.1:8090/api/collections/note_collection/records?page=1&perPage=30",
-    {
-      next: { revalidate: 10 },
-      cache: "no-store",
-    }
-  );
+  const url =
+    "http://127.0.0.1:8090/api/collections/note_collection/records?page=1&perPage=30";
+  const res = await fetch(url, {
+    next: { revalidate: 10 },
+    cache: "reload",
+  });
   const data = await res.json();
   return data?.items as any[];
 }
 
 export default async function NotesPage() {
-  const t = useTranslations('Notes');
-  const notes = await getNotes();
+  const [notes, setNotes] = useState([]);
+
+  useEffect(() => {
+    const fetchNotes = async () => {
+      const fetchedNotes = await getNotes();
+      setNotes(fetchedNotes);
+    };
+
+    fetchNotes();
+  }, []);
+
+  const t = useTranslations("Notes");
+  // const notes = await getNotes();
   return (
     <Container>
-      {/* <Text h1>Notes</Text> */}
-      <Text h1>{t('title')}</Text>
+      <Text h1>{t("title")}</Text>
+      {/* <LoadingCustom /> */}
       <Suspense fallback={<LoadingCustom />}>
         <Grid.Container
           gap={2}
@@ -34,7 +44,7 @@ export default async function NotesPage() {
         >
           {notes?.map((note) => {
             return (
-              <Grid md={3} lg={2}>
+              <Grid md={3} lg={2} key={crypto.randomUUID()}>
                 <Note key={note.id} note={note} />
               </Grid>
             );
@@ -50,7 +60,7 @@ export default async function NotesPage() {
 function Note({ note }: any) {
   const { id, title, content, created, updated } = note || {};
   return (
-    <Link href={`/notes/${id}`} className={styles.link}> 
+    <Link href={`/notes/${id}`} className={styles.link}>
       <Card
         css={{
           mw: "300px",

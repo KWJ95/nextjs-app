@@ -10,10 +10,13 @@
   },
   "Notes": {
     "title": "Note",
-    "card-header": "Create a new Note",
-    "card-btn": "Create note",
+    "card-header-create": "Create a new Note",
+    "card-header-edit": "Edit note",
+    "card-create-btn": "Create note",
+    "card-edit-btn": "Edit note",
     "ph-title": "Title",
-    "ph-content": "Content"
+    "ph-content": "Content",
+    "latest_changed": "Latest changed:"
   },
   "LocaleSwitcher": {
     "label": "Change language",

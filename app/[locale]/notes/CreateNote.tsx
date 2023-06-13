@@ -41,7 +41,7 @@ export default function CreateNote() {
   return (
     <Card css={{ mw: "350px", justifyContent: "center" }}>
       <Card.Header>
-        <Text h3>{t("card-header")}</Text>
+        <Text h3>{t("card-header-create")}</Text>
       </Card.Header>
       <Card.Body>
         <form onSubmit={create}>
@@ -65,7 +65,7 @@ export default function CreateNote() {
           </Row>
           <Spacer />
           <Row css={{ justifyContent: "center" }}>
-            <Button type="submit">{t("card-btn")}</Button>
+            <Button type="submit">{t("card-create-btn")}</Button>
           </Row>
         </form>
       </Card.Body>

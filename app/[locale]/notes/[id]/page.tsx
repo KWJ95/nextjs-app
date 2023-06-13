@@ -8,7 +8,7 @@ async function getNote(noteId: string) {
   const res = await fetch(
     `http://127.0.0.1:8090/api/collections/note_collection/records/${noteId}`,
     {
-      cache: "no-store",
+      cache: "no-cache",
     }
   );
   const data = await res.json();

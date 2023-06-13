@@ -20,7 +20,7 @@ export default function LocaleSwitcher() {
 
   return (
     <div className="nav-item dropdown">
-      <p>{t("label")}</p>
+      <p className="nav-link fw-bold">{t("label")}</p>
       <select
         defaultValue={locale}
         disabled={isPending}

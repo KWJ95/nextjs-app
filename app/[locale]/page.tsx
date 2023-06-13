@@ -45,7 +45,7 @@ export default function Index() {
         {details?.map((detail) => {
           return (
             <motion.li variants={item}>
-              <ListCard detail={detail} />
+              <ListCard detail={detail} key={crypto.randomUUID()}/>
             </motion.li>
           );
         })}

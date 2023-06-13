@@ -10,10 +10,13 @@
   },
   "Notes": {
     "title": "Nota",
-    "card-header": "Buat nota baru",
-    "card-btn": "Buat nota",
+    "card-header-create": "Buat Nota Baru",
+    "card-header-edit": "Edit nota",
+    "card-create-btn": "Buat nota",
+    "card-edit-btn": "Edit nota",
     "ph-title": "Tajuk",
-    "ph-content": "Kandungan"
+    "ph-content": "Kandungan",
+    "latest_changed": "Perubahan terkini:"
   },
   "LocaleSwitcher": {
     "label": "Tukar bahasa",
