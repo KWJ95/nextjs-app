@@ -1,25 +1,33 @@
 "use client";
-import { Container, Text, Card } from "@nextui-org/react";
+import "./globals.css";
+import { Card1, Card2, Card3, Card4, Card5 } from "../components/CustomCards";
+import { Container, Grid, Text } from "@nextui-org/react";
+import { Reorder, Variants, motion } from "framer-motion";
+import { useState } from "react";
 import { useTranslations } from "next-intl";
-import { motion } from "framer-motion";
+import ListCard from "../components/ListCard";
 
 export default function Index() {
   const t = useTranslations("Index");
-  const details = [
+  const initialDetails = [
     t("nextui"),
     t("next-intl"),
     t("react-color-palette"),
     t("pocketbase"),
   ];
-
-  const list = {
-    visible: { opacity: 1 },
-    hidden: { opacity: 0 },
-  };
-
-  const item = {
-    visible: { opacity: 1, x: 0 },
-    hidden: { opacity: 0, x: -100 },
+  const [details, setDetails] = useState(initialDetails);
+  const cardVariants: Variants = {
+    offscreenUp: { y: 200, opacity: 0 },
+    offscreenDown: { y: -200, opacity: 0 },
+    onscreenY: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        ease: "linear",
+        delay: 0.5,
+        duration: 0.8,
+      },
+    },
   };
 
   return (
@@ -29,43 +37,59 @@ export default function Index() {
         size={50}
         css={{
           textGradient: "45deg, $blue600 -20%, $pink600 50%",
-          lineHeight: "1.4"
+          lineHeight: "1.4",
         }}
         weight="bold"
       >
         {t("landing_page")}
       </Text>
       <p>{t("message")}</p>
-      <motion.ul
-        initial="hidden"
-        animate="visible"
-        variants={list}
-        className="landingList"
-      >
-        {details?.map((detail) => {
-          return (
-            <motion.li variants={item}>
-              <ListCard detail={detail} key={crypto.randomUUID()}/>
-            </motion.li>
-          );
-        })}
-      </motion.ul>
+      <Reorder.Group axis="y" onReorder={setDetails} values={details}>
+        {details?.map((detail) => (
+          <ListCard key={detail} item={detail} detail={detail} />
+        ))}
+      </Reorder.Group>
+      <Grid.Container gap={2} justify="center">
+        <Grid xs={12} sm={4}>
+          <motion.div
+            initial="offscreenUp"
+            whileInView="onscreenY"
+            style={{width:"100%"}}
+          >
+            <motion.div variants={cardVariants}>
+              <Card1 />
+            </motion.div>
+          </motion.div>
+        </Grid>
+        <Grid xs={12} sm={4}>
+        <motion.div
+            initial="offscreenDown"
+            whileInView="onscreenY"
+            style={{width:"100%"}}
+          >
+            <motion.div variants={cardVariants}>
+              <Card2 />
+            </motion.div>
+          </motion.div>
+        </Grid>
+        <Grid xs={12} sm={4}>
+        <motion.div
+            initial="offscreenUp"
+            whileInView="onscreenY"
+            style={{width:"100%"}}
+          >
+            <motion.div variants={cardVariants}>
+              <Card3 />
+            </motion.div>
+          </motion.div>
+        </Grid>
+        <Grid xs={12} sm={5}>
+          <Card4 />
+        </Grid>
+        <Grid xs={12} sm={7}>
+          <Card5 />
+        </Grid>
+      </Grid.Container>
     </Container>
-  );
-}
-
-function ListCard({ detail }: any) {
-  return (
-    <Card
-      css={{
-        margin: "0.5rem 0",
-        mw: "60vw",
-        background: "linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(84,28,162,1) 37%, rgba(0,212,255,1) 100%)", 
-      }}
-    >
-      <Card.Body>
-        <Text css={{ margin: "0", color: "white" }}>{detail}</Text>
-      </Card.Body>
-    </Card>
   );
 }
