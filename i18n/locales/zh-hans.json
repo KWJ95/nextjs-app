@@ -17,7 +17,7 @@
     "ph-title": "标题",
     "ph-content": "内容",
     "latest_changed": "最近修改："
-    },
+  },
   "LocaleSwitcher": {
     "label": "换言语",
     "locale": "{locale, select, bm {马来语} en {英语} zh-hans {简体中文}}",
@@ -53,5 +53,33 @@
     "note-page-loading": "正在加载所有笔记",
     "note-edit-loading": "正在加载用户界面",
     "height-page-loading": "加载中"
+  },
+  "Cards": {
+    "card1": {
+      "text1": "要观看的内容",
+      "text2": "流式播放 Acme 活动"
+    },
+    "card2": {
+      "text1": "种植一棵树",
+      "text2": "为地球做贡献"
+    },
+    "card3": {
+      "text1": "超级加速",
+      "text2": "像野兽一样创造美丽"
+    },
+    "card4": {
+      "text1": "新品",
+      "text2": "Acme 相机",
+      "text3": "即将推出",
+      "text4": "接收通知",
+      "text5": "通知我"
+    },
+    "card5": {
+      "text1": "以你的方式度过一天",
+      "text2": "更好睡眠的清单",
+      "text3": "呼吸应用程序",
+      "text4": "获得一个好觉",
+      "text5": "获取应用"
+    }
   }
 }

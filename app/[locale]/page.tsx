@@ -6,6 +6,7 @@ import { Reorder, Variants, motion } from "framer-motion";
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 import ListCard from "../components/ListCard";
+import { useMediaQuery } from "react-responsive";
 
 export default function Index() {
   const t = useTranslations("Index");
@@ -15,6 +16,7 @@ export default function Index() {
     t("react-color-palette"),
     t("pocketbase"),
   ];
+  const isMobile = useMediaQuery({ query: '(max-width: 650px'});
   const [details, setDetails] = useState(initialDetails);
   const cardVariants: Variants = {
     offscreenUp: { y: 200, opacity: 0 },
@@ -54,7 +56,7 @@ export default function Index() {
           <motion.div
             initial="offscreenUp"
             whileInView="onscreenY"
-            style={{width:"100%"}}
+            style={{ width: "100%" }}
           >
             <motion.div variants={cardVariants}>
               <Card1 />
@@ -62,10 +64,10 @@ export default function Index() {
           </motion.div>
         </Grid>
         <Grid xs={12} sm={4}>
-        <motion.div
-            initial="offscreenDown"
+          <motion.div
+            initial={isMobile ? "offscreenUp" : "offscreenDown"}
             whileInView="onscreenY"
-            style={{width:"100%"}}
+            style={{ width: "100%" }}
           >
             <motion.div variants={cardVariants}>
               <Card2 />
@@ -73,10 +75,10 @@ export default function Index() {
           </motion.div>
         </Grid>
         <Grid xs={12} sm={4}>
-        <motion.div
+          <motion.div
             initial="offscreenUp"
             whileInView="onscreenY"
-            style={{width:"100%"}}
+            style={{ width: "100%" }}
           >
             <motion.div variants={cardVariants}>
               <Card3 />

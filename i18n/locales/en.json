@@ -53,5 +53,33 @@
     "note-page-loading": "Loading all notes",
     "note-edit-loading": "Loading UI",
     "height-page-loading": "Loading"
+  },
+  "Cards": {
+    "card1": {
+      "text1": "What to watch",
+      "text2": "Stream the Acme event"
+    },
+    "card2": {
+      "text1": "Plant a tree",
+      "text2": "Contribute to the planet"
+    },
+    "card3": {
+      "text1": "Supercharged",
+      "text2": "Creates beauty like a beast"
+    },
+    "card4": {
+      "text1": "New",
+      "text2": "Acme camera",
+      "text3": "Available soon.",
+      "text4": "Get notified.",
+      "text5": "Notify Me"
+    },
+    "card5": {
+      "text1": "Your day your way",
+      "text2": "Your checklist for better sleep",
+      "text3": "Breathing App",
+      "text4": "Get a good night's sleep.",
+      "text5": "Get App"
+    }
   }
 }

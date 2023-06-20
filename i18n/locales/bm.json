@@ -53,5 +53,33 @@
     "note-page-loading": "Memuatkan semua nota",
     "note-edit-loading": "Memuatkan UI",
     "height-page-loading": "Memuatkan"
+  },
+  "Cards": {
+    "card1": {
+      "text1": "Apa yang perlu ditonton",
+      "text2": "Stream acara Acme"
+    },
+    "card2": {
+      "text1": "Tanam pokok",
+      "text2": "Menyumbang kepada planet"
+    },
+    "card3": {
+      "text1": "Berkuasa tinggi",
+      "text2": "Mencipta kecantikan seperti binatang"
+    },
+    "card4": {
+      "text1": "Baru",
+      "text2": "Kamera Acme",
+      "text3": "Akan datang segera.",
+      "text4": "Dapatkan pemberitahuan.",
+      "text5": "Beritahu Saya"
+    },
+    "card5": {
+      "text1": "Hari anda, cara anda",
+      "text2": "Senarai semak untuk tidur yang lebih baik",
+      "text3": "Aplikasi Pernafasan",
+      "text4": "Dapatkan tidur malam yang baik.",
+      "text5": "Dapatkan Aplikasi"
+    }
   }
 }
