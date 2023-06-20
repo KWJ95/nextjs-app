@@ -16,7 +16,7 @@ export default function Index() {
     t("react-color-palette"),
     t("pocketbase"),
   ];
-  const isMobile = useMediaQuery({ query: '(max-width: 650px'});
+  const isMobile = useMediaQuery({ query: '(min-width: 650px'});
   const [details, setDetails] = useState(initialDetails);
   const cardVariants: Variants = {
     offscreenUp: { y: 200, opacity: 0 },
@@ -26,8 +26,8 @@ export default function Index() {
       opacity: 1,
       transition: {
         ease: "linear",
-        delay: 0.5,
-        duration: 0.8,
+        delay: 0.3,
+        duration: 0.5,
       },
     },
   };
