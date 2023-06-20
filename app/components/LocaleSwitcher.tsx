@@ -1,5 +1,6 @@
 "use clients";
 
+import { Dropdown } from "@nextui-org/react";
 import { useLocale, useTranslations } from "next-intl";
 import { usePathname } from "next-intl/client";
 import { useRouter } from "next/navigation";
@@ -12,26 +13,45 @@ export default function LocaleSwitcher() {
   const router = useRouter();
   const pathname = usePathname();
 
-  function onSelectChange(event: ChangeEvent<HTMLSelectElement>) {
+  // function onSelectChange(event: ChangeEvent<HTMLSelectElement>) {
+  function onSelectChange(event: any) {
     startTransition(() => {
-      router.replace(`/${event.target.value}${pathname}`);
+      // router.replace(`/${event.target.value}${pathname}`);
+      router.replace(`/${event}${pathname}`);
     });
   }
 
   return (
-    <div className="nav-item dropdown">
-      <p className="nav-link fw-bold">{t("label")}</p>
-      <select
-        defaultValue={locale}
-        disabled={isPending}
-        onChange={onSelectChange}
-      >
-        {["en", "bm", "zh-hans"].map((cur) => (
-          <option key={cur} value={cur}>
-            {t(cur)}
-          </option>
-        ))}
-      </select>
-    </div>
+    // <div className="nav-item dropdown">
+    //   <p className="nav-link fw-bold">{t("label")}</p>
+    //   <select
+    //     defaultValue={locale}
+    //     disabled={isPending}
+    //     onChange={onSelectChange}
+    //   >
+    //     {["en", "bm", "zh-hans"].map((cur) => (
+    //       <option key={cur} value={cur}>
+    //         {t(cur)}
+    //       </option>
+    //     ))}
+    //   </select>
+    // </div>
+
+    <Dropdown>
+      <Dropdown.Button flat>
+        {t("label")}
+      </Dropdown.Button>
+      <Dropdown.Menu
+        selectionMode="single"
+        disallowEmptySelection
+        selectedKeys={locale}
+        onAction={onSelectChange}>
+      {["en", "bm", "zh-hans"].map((cur) => (
+        <Dropdown.Item key={cur}>
+          {t(cur)}
+        </Dropdown.Item>
+      ))}
+      </Dropdown.Menu>
+    </Dropdown>
   );
 }
