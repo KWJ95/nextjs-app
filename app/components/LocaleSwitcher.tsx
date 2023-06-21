@@ -5,6 +5,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { usePathname } from "next-intl/client";
 import { useRouter } from "next/navigation";
 import { ChangeEvent, useTransition } from "react";
+import { Globe } from "./SvgIcons";
 
 export default function LocaleSwitcher() {
   const t = useTranslations("LocaleSwitcher");
@@ -39,7 +40,7 @@ export default function LocaleSwitcher() {
 
     <Dropdown>
       <Dropdown.Button flat>
-        {t("label")}
+        <Globe/> {t("label")}
       </Dropdown.Button>
       <Dropdown.Menu
         selectionMode="single"
