@@ -1,6 +1,13 @@
 "use client";
 import { Suspense } from "react";
-import { Container, Text, Grid, Row, Card } from "@nextui-org/react";
+import {
+  Container,
+  Text,
+  Grid,
+  Row,
+  Card,
+  Link
+} from "@nextui-org/react";
 import CreatePerson from "./CreatePerson";
 import LoadingHeight from "./loading";
 import DragBox from "./DragBox";
@@ -8,12 +15,25 @@ import { useTranslations } from "next-intl";
 
 export default async function HeightPage() {
   // const [isImp, toggleUnit] = useState<boolean>(false);
-  const t = useTranslations('Height');
+  const t = useTranslations("Height");
   return (
     <Container>
       <Grid.Container>
         <Row>
-          <Text h1>{t('title')}</Text>
+          <Text h1>{t("title")}</Text>
+        </Row>
+        <Row>
+          <Text h3>
+            This is a WIP for creating a height comparison tool by cloning&nbsp;
+            <Link
+              href="https://hikaku-sitatter.com/en/"
+              target="_blank"
+              isExternal
+            >
+              hikaku sitatter
+            </Link>
+            &nbsp;functionality
+          </Text>
         </Row>
         <Grid lg={3} md={4}>
           <Suspense fallback={<LoadingHeight />}>
@@ -42,8 +62,8 @@ export default async function HeightPage() {
   );
 }
 
-function People( {p} : any) {
-  const {id, name, gender, height, color } = p || {};
+function People({ p }: any) {
+  const { id, name, gender, height, color } = p || {};
   const hex = color?.hex ?? "invalid";
   return (
     <Card>
@@ -63,7 +83,6 @@ function People( {p} : any) {
 }
 
 function ConvertUnit(isImp: boolean, height: number) {
-  if (isImp) 
-    return (height*3.2808).toFixed(2);
-  return height*100;
+  if (isImp) return (height * 3.2808).toFixed(2);
+  return height * 100;
 }
