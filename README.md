@@ -20,7 +20,7 @@ Run db admin command to access admin UI that controls collection and tables etc.
 pocketbase serve
 ```
 If admin login has issue/error, run pocketbase.exe.
-Then create new note_collection with text fields 'title' and 'content
+Then create new `note_collection` with text fields 'title' and 'content
 
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
