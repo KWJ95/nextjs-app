@@ -1,6 +1,6 @@
 "use client";
 import { Suspense, useState, useEffect } from "react";
-import { Text, Card, Grid, Spacer, Container } from "@nextui-org/react";
+import { Card, CardHeader, CardBody, Spacer } from "@nextui-org/react";
 import { useTranslations } from "next-intl";
 import CreateNote from "./CreateNote";
 import Link from "next/link";
@@ -33,27 +33,26 @@ export default async function NotesPage() {
   const t = useTranslations("Notes");
   // const notes = await getNotes();
   return (
-    <Container>
-      <Text h1>{t("title")}</Text>
-      {/* <LoadingCustom /> */}
+    <>
+      <h1>{t("title")}</h1>
       <Suspense fallback={<LoadingCustom />}>
-        <Grid.Container
-          gap={2}
-          alignItems="flex-start"
+        <div
+          // gap={2}
+          // alignItems="flex-start"
           justify-content="flex-start"
         >
           {notes?.map((note) => {
             return (
-              <Grid md={3} lg={2} key={crypto.randomUUID()}>
+              <div /* md={3} lg={2} */ key={crypto.randomUUID()}>
                 <Note key={note.id} note={note} />
-              </Grid>
+              </div>
             );
           })}
-        </Grid.Container>
+        </div>
       </Suspense>
       <Spacer y={1} />
       <CreateNote />
-    </Container>
+    </>
   );
 }
 
@@ -61,20 +60,14 @@ function Note({ note }: any) {
   const { id, title, content, created, updated } = note || {};
   return (
     <Link href={`/notes/${id}`} className={styles.link}>
-      <Card
-        css={{
-          mw: "300px",
-          padding: "0.2rem 1rem",
-          backgroundColor: "#ffff00",
-        }}
-      >
-        <Card.Header>
-          <Text h4>{title}</Text>
-        </Card.Header>
-        <Card.Body>
-          <Text h5>{content}</Text>
-          <Text>{updated > created ? updated : created}</Text>
-        </Card.Body>
+      <Card>
+        <CardHeader>
+          <h4>{title}</h4>
+        </CardHeader>
+        <CardBody>
+          <h5>{content}</h5>
+          <p>{updated > created ? updated : created}</p>
+        </CardBody>
       </Card>
     </Link>
   );

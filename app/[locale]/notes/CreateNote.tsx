@@ -2,13 +2,13 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import {
-  Text,
-  Textarea,
   Button,
-  Input,
-  Row,
   Card,
-  Spacer,
+  CardBody,
+  CardHeader,
+  Input,
+  Textarea,
+  Spacer
 } from "@nextui-org/react";
 import { useTranslations } from "next-intl";
 
@@ -39,36 +39,30 @@ export default function CreateNote() {
     router.refresh();
   };
   return (
-    <Card css={{ mw: "350px", justifyContent: "center" }}>
-      <Card.Header>
-        <Text h3>{t("card-header-create")}</Text>
-      </Card.Header>
-      <Card.Body>
+    <Card className="max-w-[350] justifyContent: center">
+      <CardHeader>
+        <h3>{t("card-header-create")}</h3>
+      </CardHeader>
+      <CardBody>
         <form onSubmit={create}>
-          <Row>
-            <Input
-              type="text"
-              placeholder={t("ph-title")}
-              value={title}
-              onChange={(e) => setTitle(e.target.value)}
-              width="inherit"
-            />
-          </Row>
-          <Spacer />
-          <Row>
-            <Textarea
-              placeholder={t("ph-content")}
-              value={content}
-              onChange={(e) => setContent(e.target.value)}
-              width="inherit"
-            />
-          </Row>
-          <Spacer />
-          <Row css={{ justifyContent: "center" }}>
-            <Button type="submit">{t("card-create-btn")}</Button>
-          </Row>
+          <Input
+            type="text"
+            placeholder={t("ph-title")}
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            width="inherit"
+          />
+          <Spacer y={1} />
+          <Textarea
+            placeholder={t("ph-content")}
+            value={content}
+            onChange={(e) => setContent(e.target.value)}
+            width="inherit"
+          />
+          <Spacer y={1} />
+          <Button type="submit">{t("card-create-btn")}</Button>
         </form>
-      </Card.Body>
+      </CardBody>
     </Card>
   );
 }

@@ -1,11 +1,9 @@
 "use client";
 import { Suspense } from "react";
 import {
-  Container,
-  Text,
-  Grid,
-  Row,
   Card,
+  CardBody,
+  CardHeader,
   Link
 } from "@nextui-org/react";
 import CreatePerson from "./CreatePerson";
@@ -17,13 +15,13 @@ export default async function HeightPage() {
   // const [isImp, toggleUnit] = useState<boolean>(false);
   const t = useTranslations("Height");
   return (
-    <Container>
-      <Grid.Container>
-        <Row>
-          <Text h1>{t("title")}</Text>
-        </Row>
-        <Row>
-          <Text h3>
+    <div>
+      <div className="grid grid-col-2">
+        <div>
+          <h1>{t("title")}</h1>
+        </div>
+        <div>
+          <h3>
             This is a WIP for creating a height comparison tool by cloning&nbsp;
             <Link
               href="https://hikaku-sitatter.com/en/"
@@ -33,32 +31,32 @@ export default async function HeightPage() {
               hikaku sitatter
             </Link>
             &nbsp;functionality
-          </Text>
-        </Row>
-        <Grid lg={3} md={4}>
+          </h3>
+        </div>
+        <div className="lg:w-32 md:w-48">
           <Suspense fallback={<LoadingHeight />}>
             <CreatePerson />
           </Suspense>
-        </Grid>
-        <Grid lg={9} md={8}>
-          <Row>
+        </div>
+        <div className="lg:w-9 md:w-8">
+          <div>
             <DragBox />
             {/* {isImp ? ConvertUnit(isImp, height)) : height} */}
-          </Row>
-          <Row>
-            <Grid.Container>
+          </div>
+          <div>
+            <div>
               {/* {people?.map((p) => {
                 return (
-                  <Grid md={3} lg={2}>
+                  <div md={3} lg={2}>
                     <People key={p.id} p={p}/>
-                  </Grid>
+                  </div>
                 );
               })} */}
-            </Grid.Container>
-          </Row>
-        </Grid>
-      </Grid.Container>
-    </Container>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }
 
@@ -67,17 +65,17 @@ function People({ p }: any) {
   const hex = color?.hex ?? "invalid";
   return (
     <Card>
-      <Card.Body>
-        <Text size="$xl">{name}</Text>
-        <Text>{gender}</Text>
-        <Text>{height}</Text>
-        <Text>{hex}</Text>
+      <CardBody>
+        <p /* size="$xl" */>{name}</p>
+        <p>{gender}</p>
+        <p>{height}</p>
+        <p>{hex}</p>d
         {/* {color?.map((v)=>{
           return (
-            <Text>{v.hex}</Text>
+            <p>{v.hex}</p>
           );
         })} */}
-      </Card.Body>
+      </CardBody>
     </Card>
   );
 }
