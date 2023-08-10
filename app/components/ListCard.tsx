@@ -1,5 +1,5 @@
 "use client";
-import { Card, Text } from "@nextui-org/react";
+import { Card, CardBody } from "@nextui-org/react";
 import { Reorder, motion, useMotionValue } from "framer-motion";
 import { useRaisedShadow } from "./use-raised-shadow";
 
@@ -21,16 +21,16 @@ export default function ListCard({ detail }: any) {
     >
       <motion.div>
         <Card
-          css={{
-            margin: "0.5rem 0",
-            mw: "60vw",
-            background:
-              "linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(84,28,162,1) 37%, rgba(0,212,255,1) 100%)",
-          }}
+          // css={{
+          //   margin: "0.5rem 0",
+          //   mw: "60vw",
+          //   background:
+          //     "linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(84,28,162,1) 37%, rgba(0,212,255,1) 100%)",
+          // }}
         >
-          <Card.Body>
-            <Text css={{ margin: "0", color: "white" }}>{detail}</Text>
-          </Card.Body>
+          <CardBody>
+            {/* <p css={{ margin: "0", color: "white" }}>{detail}</p> */}
+          </CardBody>
         </Card>
       </motion.div>
     </Reorder.Item>
